@@ -17,5 +17,23 @@ var numbersArray = [11,24,45,44,59,43,88,93,58,11,13,14,15,190]
 var stringsArray = ["I", "Love", "DevMountain"]
 var blackDiamondDictionary = ["Mama" : "too cold", "Papa" : "too hot", "Baby" : "just right"]
 
+let threes = numbersArray.filter { (fil) -> Bool in
+    fil % 3 == 0
+}
+let shortened = numbersArray.filter { $0 % 3 == 0 }
+print(threes)
+print(shortened)
 
+let largest = numbersArray.reduce(0) {$0 > $1 ? $0 : $1}
+print(largest)
+
+let combo = stringsArray.reduce("", { x, y in
+    x + y + " "
+})
+print(combo)
+
+let dictionary = blackDiamondDictionary.flatMap { str in
+    str.key
+}
+print(dictionary)
 //: [Next](@next)
